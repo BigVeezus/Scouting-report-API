@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Martin VandeVoordt",
+    "age": 19,
+    "position": ["GK"],
+    "club": "KRC Genk",
+    "valueInMillions": 11.5,
+    "country": "Belgium",
+    "heightInCM": 195,
+    "foot": "right"
+  },
+  {
+    "name": "David Carmo",
+    "age": 21,
+    "position": ["CB"],
+    "club": "SC Braga",
+    "valueInMillions": 4.1,
+    "country": "Portugal",
+    "heightInCM": 203,
+    "foot": "left"
+  },
+  {
+    "name": "Becir Omeragic",
+    "age": 19,
+    "position": ["CB", "RB"],
+    "club": "FC Zurich",
+    "valueInMillions": 3.3,
+    "country": "Switzerland",
+    "heightInCM": 184,
+    "foot": "right"
+  },
+  {
+    "name": "Nico Scholotterbeck",
+    "age": 21,
+    "position": ["CB", "LB"],
+    "club": "SC Freiburg",
+    "valueInMillions": 10,
+    "country": "Germany",
+    "heightInCM": 203,
+    "foot": "right"
+  },
+  {
+    "name": "Jurrien Timber",
+    "age": 20,
+    "position": ["CB"],
+    "club": "AFC Ajax",
+    "valueInMillions": 24,
+    "country": "Netherlands",
+    "heightInCM": 190,
+    "foot": "right"
+  },
+  {
+    "name": "Jeremie Frimpong",
+    "age": 20,
+    "position": ["RB", "RW"],
+    "club": "Bayer 04 Leverkusen",
+    "valueInMillions": 35,
+    "country": "Netherlands",
+    "heightInCM": 183,
+    "foot": "right"
+  },
+  {
+    "name": "Wilfred Singo",
+    "age": 20,
+    "position": ["RB"],
+    "club": "Torino",
+    "valueInMillions": 28,
+    "country": "Cote D'Ivoire",
+    "heightInCM": 203,
+    "foot": "left"
+  },
+  {
+    "name": "Fran Garcia",
+    "age": 21,
+    "position": ["LB"],
+    "club": "Rayo Vallecano",
+    "valueInMillions": 4.4,
+    "country": "Spain",
+    "heightInCM": 178,
+    "foot": "left"
+  },
+  {
+    "name": "Adrien Truffert",
+    "age": 19,
+    "position": ["LB", "LW"],
+    "club": "Stade Rennais",
+    "valueInMillions": 1.5,
+    "country": "France",
+    "heightInCM": 189,
+    "foot": "left"
+  },
+  {
+    "name": "Mohammed Camara",
+    "age": 21,
+    "position": ["DM"],
+    "club": "Red Bull Salzburg",
+    "valueInMillions": 7.6,
+    "country": "Mali",
+    "heightInCM": 196,
+    "foot": "right"
+  },
+  {
+    "name": "Danilo",
+    "age": 20,
+    "position": ["DM", "CM"],
+    "club": "Palmeiras",
+    "valueInMillions": 5.4,
+    "country": "Brazil",
+    "heightInCM": 180,
+    "foot": "left"
+  },
+  {
+    "name": "Antony Santos",
+    "age": 21,
+    "position": ["RW"],
+    "club": "Manchester United",
+    "valueInMillions": 80,
+    "country": "Brazil",
+    "heightInCM": 184,
+    "foot": "left"
+  },
+  {
+    "name": "Davide Fratessi",
+    "age": 21,
+    "position": ["CM"],
+    "club": "Sassuolo",
+    "valueInMillions": 25,
+    "country": "Italy",
+    "heightInCM": 190,
+    "foot": "right"
+  },
+  {
+    "name": "Fabio Calvalho",
+    "age": 18,
+    "position": ["CAM", "LW", "RW"],
+    "club": "Fulham",
+    "valueInMillions": 14,
+    "country": "England",
+    "heightInCM": 186,
+    "foot": "right"
+  },
+  {
+    "name": "Arsen Zarkhayan",
+    "age": 18,
+    "position": ["CAM", "RW"],
+    "club": "Dynamo Moscow",
+    "valueInMillions": 10,
+    "country": "Russia",
+    "heightInCM": 188,
+    "foot": "right"
+  }
+]

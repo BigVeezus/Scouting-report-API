@@ -1,19 +1,17 @@
 const mongoose = require("mongoose");
+const countries = require("../country");
 
 const playerSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  img: {
-    type: String,
-  },
   age: {
-    type: Date,
+    type: Number,
     required: true,
   },
   position: {
-    type: String,
+    type: [String],
     enum: [
       "ST",
       "RW",
@@ -30,12 +28,25 @@ const playerSchema = new mongoose.Schema({
     ],
     require: true,
   },
-  age: {
+  club: {
+    type: String,
+    default: "Free Agent",
+  },
+  valueInMillions: {
     type: Number,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  height: {
+    type: Number,
+    Required: true,
   },
   foot: {
     type: String,
-    enum: ["right", "left"],
+    enum: ["right", "left", "both"],
   },
 });
 

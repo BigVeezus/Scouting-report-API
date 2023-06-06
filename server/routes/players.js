@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Player = require("../model/Player");
+const players = require("../players.json");
 
 router.get("/players", async (req, res) => {
   try {
     const page = parseInt(req.query.page) - 1 || 0;
     const limit = parseInt(req.query.limit) || 5;
-    const search = req.query.search || " ";
+    const search = req.query.search || "";
 
-    let sort = req.query.sort || "age";
-    let position = req.query.foot || "all";
+    let sort = req.query.sort || "valueInMillions";
+    let position = req.query.position || "all";
+    let foot = req.query.foot || "all";
 
     const postionOptions = [
       "ST",
@@ -25,9 +27,14 @@ router.get("/players", async (req, res) => {
       "CB",
       "GK",
     ];
+
+    const footOptions = ["right", "left"];
+
     position === "all"
       ? (position = [...postionOptions])
       : (position = req.query.position.split(","));
+
+    foot === "all" ? (foot = [...footOptions]) : (foot = [foot]);
     req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
 
     let sortBy = {};
@@ -45,12 +52,15 @@ router.get("/players", async (req, res) => {
     })
       .where("position")
       .in([...position])
+      .where("foot")
+      .in([...foot])
       .sort(sortBy)
       .skip(page * limit)
       .limit(limit);
 
     const total = await Player.countDocuments({
-      genre: { $in: [...position] },
+      position: { $in: [...position] },
+      foot: { $in: [...foot] },
       name: { $regex: search, $options: "i" },
     });
 
@@ -60,10 +70,11 @@ router.get("/players", async (req, res) => {
       page: page + 1,
       limit,
       positions: postionOptions,
+      feet: footOptions,
       players,
     };
 
-    res.status(200).send(response);
+    res.status(200).json(response);
   } catch (err) {
     console.log(err);
     res.status(500).json({
@@ -72,5 +83,18 @@ router.get("/players", async (req, res) => {
     });
   }
 });
+
+const insertPlayers = async () => {
+  try {
+    const docs = await Player.insertMany(players);
+    return Promise.resolve(docs);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};
+
+// insertPlayers()
+//   .then((docs) => console.log(docs))
+//   .catch((err) => console.log(err));
 
 module.exports = router;
