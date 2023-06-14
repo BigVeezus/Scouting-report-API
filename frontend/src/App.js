@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
+import Search from "./components/search";
+import Table from "./components/table/table";
 
-const baseUrl = process.env.REACT_APP_API_URL;
+const baseUrl = "http://localhost:7000/api/players";
 
 function App() {
   const [obj, setObj] = useState({});
@@ -14,11 +17,36 @@ function App() {
   useEffect(() => {
     const getAllPlayers = async () => {
       try {
-      } catch (err) {}
-    };
-  });
+        const url = `${baseUrl}?page=${page}&sort=${sort.sort},${
+          sort.order
+        }&foot=${filterFoot.toString()}&position=${filterPosition.toString()}&search=${search}`;
 
-  return <h1>HELLO</h1>;
+        const { data } = await axios.get(url);
+        setObj(data);
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getAllPlayers();
+  }, [sort, filterFoot, filterPosition, page, search]);
+
+  return (
+    <div className="wrapper">
+      <div className="container">
+        <div className="head">
+          <img src="./images/logo.jpeg" alt="logo" className="logo" />
+          <Search setSearch={(search) => setSearch(search)} />
+        </div>
+        <div className="body">
+          <div className="table_container">
+            <Table players={obj.players ? obj.players : []} />
+          </div>
+          <div className="filter_container"></div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
