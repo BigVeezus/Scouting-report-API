@@ -12,6 +12,10 @@ connectDB();
 
 app.use("/api", playerRoutes);
 
+app.get("/", (req, res) => {
+  res.send("PLAYER API");
+});
+
 app.listen(port, () => {
   console.log("Listening at 7k");
 });

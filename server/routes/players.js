@@ -28,7 +28,7 @@ router.get("/players", async (req, res) => {
       "GK",
     ];
 
-    const footOptions = ["right", "left"];
+    const footOptions = ["right", "left", "both"];
 
     position === "all"
       ? (position = [...postionOptions])
