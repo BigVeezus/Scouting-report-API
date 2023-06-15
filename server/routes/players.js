@@ -44,11 +44,17 @@ router.get("/players", async (req, res) => {
       sortBy[sort[0]] = "asc";
     }
 
+    let regex = new RegExp(search, "i");
+    // {
+    //   $and: [
+    //     { $or: [{ title: regex }, { description: regex }] },
+    //     { category: value.category },
+    //     { city: value.city },
+    //   ];
+    // }
+
     const players = await Player.find({
-      name: {
-        $regex: search,
-        $options: "i",
-      },
+      $and: [{ $or: [{ name: regex }, { country: regex }] }],
     })
       .where("position")
       .in([...position])
