@@ -7,8 +7,9 @@ const Table = ({ players }) => {
         <p className="title_tab">Player</p>
         <p className="genre_tab">Position</p>
         <p className="genre_tab">Age</p>
+        <p className="genre_tab">Foot</p>
         <p className="rating_tab">Country</p>
-        <p className="rating_tab">Cost</p>
+        <p className="rating_tab">Value</p>
       </div>
       {players.map((player) => (
         <div className="movie" key={player._id}>
@@ -37,8 +38,18 @@ const Table = ({ players }) => {
               alt="star"
               className={styles.star_img}
             /> */}
+            <p className="movie_rating">{player.foot}</p>
+          </div>
+
+          <div className="rating_container">
+            {/* <img
+              src="./images/star.png"
+              alt="star"
+              className={styles.star_img}
+            /> */}
             <p className="movie_rating">{player.country}</p>
           </div>
+
           <div className="rating_container">
             {/* <img
               src="./images/star.png"

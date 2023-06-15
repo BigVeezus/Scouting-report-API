@@ -38,7 +38,7 @@
 .movie {
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 55px;
   margin: 5px 10px;
   box-shadow: var(--box-shadow);
   cursor: pointer;

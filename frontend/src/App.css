@@ -7,14 +7,14 @@
 }
 
 .container {
-  width: 1150px;
+  width: 1000px;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
+  /* height: fit-content; */
   overflow: hidden;
   background-color: white;
-  height: 100vh;
 }
 
 .head {
@@ -26,14 +26,14 @@
 }
 
 .logo {
-  width: 80px;
+  width: 100px;
   object-fit: contain;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .body {
-  height: 500px;
-  display: flex;
+  height: auto;
+  /* display: flex; */
 }
 
 .table_container {
@@ -43,4 +43,6 @@
 
 .filter_container {
   flex: 1;
+  /* margin-top: -10px; */
+  position: relative;
 }
