@@ -5,7 +5,7 @@ const Search = ({ setSearch }) => {
     <input
       type="text"
       className="search"
-      placeholder="search player or country"
+      placeholder="Search player or country..."
       onChange={({ currentTarget: input }) => setSearch(input.value)}
     />
   );

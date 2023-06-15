@@ -13,7 +13,7 @@ function App() {
   const [obj, setObj] = useState({});
   const [sort, setSort] = useState({ sort: "valueInMillions", order: "desc" });
   const [filterPosition, setFilterPosition] = useState([]);
-  const [filterFoot, setFilterFoot] = useState([]);
+  // const [filterFoot, setFilterFoot] = useState([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
@@ -22,7 +22,7 @@ function App() {
       try {
         const url = `${baseUrl}?page=${page}&sort=${sort.sort},${
           sort.order
-        }&foot=${filterFoot.toString()}&position=${filterPosition.toString()}&search=${search}`;
+        }&position=${filterPosition.toString()}&search=${search}`;
 
         const { data } = await axios.get(url);
         setObj(data);
@@ -32,7 +32,7 @@ function App() {
       }
     };
     getAllPlayers();
-  }, [sort, filterFoot, filterPosition, page, search]);
+  }, [sort, filterPosition, page, search]);
 
   return (
     <div className="wrapper">

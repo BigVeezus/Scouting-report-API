@@ -15,7 +15,7 @@ const Sort = ({ sort, setSort }) => {
 
   return (
     <div className="containersort">
-      <p className="sort_by">Sort By :</p>
+      <p className="sort_by">Sort by:</p>
 
       <select
         aria-label="select"
