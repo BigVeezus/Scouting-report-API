@@ -7,7 +7,7 @@ import Pagination from "./components/pagination/pagination";
 import Sort from "./components/sort/sort";
 import Position from "./components/position/position";
 
-const baseUrl = "http://localhost:7000/api/players";
+const baseUrl = "https://scouting-report-api.vercel.app/api/players";
 
 function App() {
   const [obj, setObj] = useState({});
